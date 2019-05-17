@@ -1,0 +1,34 @@
+// 2015-02-15 17:32:30
+
+#include <cstdio>
+
+int main()
+{
+    int n, *tab;
+    int i, suma, suma2, x;
+    scanf("%i",&x);
+    for(int j=0; j<x; j++)
+    {
+        suma=0;
+        suma2=0;
+        scanf("%i",&n);
+        tab = new int [n];
+        for(i=0; i<n; i++)
+        {
+            scanf("%i",&tab[i]);
+            suma2 += tab[i];
+        }
+        for(i=0; i<n-1; i++)
+        {
+            suma += tab[i];
+            suma2 -= tab[i];
+            if(suma==suma2)
+                break;
+        }
+        if(i==n-1)
+            printf("0\n");
+        else
+            printf("%i\n",i+1);
+    }
+    return 0;
+}
