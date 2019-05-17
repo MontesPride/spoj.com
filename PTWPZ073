@@ -1,0 +1,38 @@
+//  2015-02-10 17:02:09
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x;
+    string a;
+    cin>>x;
+    for(int i=0; i<x; i++)
+    {
+        cin>>a;
+        for(int j=0; j<a.size(); j++)
+        {
+            if((int)a[j]>=65 && (int)a[j]<=67)
+                cout<<"2";
+            if((int)a[j]>=68 && (int)a[j]<=70)
+                cout<<"3";
+            if((int)a[j]>=71 && (int)a[j]<=73)
+                cout<<"4";
+            if((int)a[j]>=74 && (int)a[j]<=76)
+                cout<<"5";
+            if((int)a[j]>=77 && (int)a[j]<=79)
+                cout<<"6";
+            if((int)a[j]>=80 && (int)a[j]<=83)
+                cout<<"7";
+            if((int)a[j]>=84 && (int)a[j]<=86)
+                cout<<"8";
+            if((int)a[j]>=87 && (int)a[j]<=90)
+                cout<<"9";
+
+        }
+        cout<<endl;
+    }
+    return 0;
+}
