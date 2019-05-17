@@ -1,0 +1,72 @@
+//  2015-02-11 20:22:20
+
+#include <cstdio>
+#include <iostream>
+#include <vector>
+#include <list>
+
+using namespace std;
+
+int main()
+{
+    int t, n, two, three, five, seven;
+    int x;
+    cin>>x;
+    for(int i=0; i<x; i++)
+    {
+        cin>>n;
+        if(n < 10)
+        {
+            if(n==0)
+                cout<<10<<endl;
+            else
+                cout<<n<<endl;
+        }
+        else
+        {
+            two = three = five = seven = 0;
+            while(n%2 == 0)
+                ++two,
+                n >>= 1;
+            while(n%3 == 0)
+                ++three,
+                n /= 3;
+            while(n%5 == 0)
+                ++five,
+                n /= 5;
+            while(n%7 == 0)
+                ++seven,
+                n /= 7;
+            if(n>1)
+            {
+                cout<<"NIE";
+            }
+            else
+            {
+                if(two%3 == 1 && three%2 == 0 || two%3 == 2 && three%2)
+                    cout<<2,
+                         --two;
+                if(three%2 && two%3 == 0)
+                    cout<<3,
+                         --three;
+                if(two%3 == 2 && three%2 == 0)
+                    cout<<4,
+                         two -= 2;
+                for(int i = 0; i < five; ++i)
+                    cout<<5;
+                if(two%3 == 1 && three%2)
+                    cout<<6,
+                         --two,
+                         --three;
+                for(int i = 0; i < seven; ++i)
+                    cout<<7;
+                for(int i = 0; i < two/3; ++i)
+                    cout<<8;
+                for(int i = 0; i < three>>1; ++i)
+                    cout<<9;
+            }
+            cout<<endl;
+        }
+    }
+    return 0;
+}
