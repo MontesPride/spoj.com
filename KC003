@@ -1,0 +1,19 @@
+//  2015-02-05 22:02:42
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float a,b,c;
+    while(cin>>a)
+    {
+        cin>>b>>c;
+        if(a+b<=c || a+c<=b || b+c<=a)
+            cout<<"0"<<endl;
+        else
+            cout<<"1"<<endl;
+    }
+    return 0;
+}s
