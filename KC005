@@ -1,0 +1,88 @@
+//  2015-02-10 14:16:23
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int q;
+    string x;
+    bool t;
+    while(getline(cin,x))
+    {
+        t=false;
+        q=7;
+        if((int)x[6]>=65 && (int)x[6]<=90)
+        {
+            while(x[q]!=';')
+            {
+                if((int)x[q]<97 || (int)x[q]>122)
+                {
+                    cout<<"0"<<endl;
+                    t=true;
+                    break;
+                }
+                else q++;
+            }
+        }
+        else
+        {
+            t=true;
+            cout<<"0"<<endl;
+        }
+
+        if(t==true)
+            continue;
+
+        while(x[q]!=':')
+        {
+            q++;
+        }
+        q+=2;
+
+        if((int)x[q]>=65 && (int)x[q]<=90)
+        {
+            q++;
+            while(x[q]!=';')
+            {
+                if((int)x[q]<97 || (int)x[q]>122)
+                {
+                    cout<<"1"<<endl;
+                    t=true;
+                    break;
+                }
+                else q++;
+            }
+        }
+        else
+        {
+            t=true;
+            cout<<"1"<<endl;
+        }
+
+        if(t==true)
+            continue;
+
+        while(x[q]!=':')
+        {
+            q++;
+        }
+        q+=2;
+
+        if(  (x[q]=='1' || x[q]=='2')  && (x[q+1]=='9' || x[q+1]=='0')  &&   ((int)x[q+2]>=48 && (int)x[q+2]<=57)  &&  ((int)x[q+3]>=48 && (int)x[q+3]<=57)    &&   (x[q+4]=='-' && x[q+7]=='-')  &&  ((((int)x[q+5]-48)*10+(int)x[q+6]-48>=1) && (((int)x[q+5]-48)*10+(int)x[q+6]-48<=12))    &&
+((int)x[q+8]-48)*10+(int)x[q+9]-48>=1 && ((int)x[q+8]-48)*10+(int)x[q+9]-48<=31)
+        {
+            t=false;
+        }
+        else
+        {
+            cout<<"2"<<endl;
+            continue;
+        }
+
+        if(t==false)
+            cout<<"3"<<endl;
+    }
+    return 0;
+}
