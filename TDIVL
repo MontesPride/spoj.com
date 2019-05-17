@@ -1,0 +1,11 @@
+#  2015-02-11 23:13:26
+
+n = int(input())
+for i in range (0,n):
+    q, k = input().split(" ")
+    q = int(q)
+    k = int(k)
+    if q%k==0:
+        print("TAK")
+    else:
+        print("NIE")
