@@ -1,0 +1,49 @@
+//  2015-02-07 12:00:37
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t[10];
+    for(int i=0; i<10; i++)
+    {
+        t[i]=0;
+    }
+    char znak;
+    int rejestr;
+    int liczba;
+    while(cin>>znak)
+    {
+        switch (znak)
+        {
+        case 'z':
+            cin>>rejestr>>liczba;
+            t[rejestr]=liczba;
+            break;
+        case '+':
+            cin>>rejestr>>liczba;
+            cout<<t[rejestr]+t[liczba]<<endl;
+            break;
+        case '-':
+            cin>>rejestr>>liczba;
+            cout<<t[rejestr]-t[liczba]<<endl;
+            break;
+        case '/':
+            cin>>rejestr>>liczba;
+            cout<<t[rejestr]/t[liczba]<<endl;
+            break;
+        case '*':
+            cin>>rejestr>>liczba;
+            cout<<t[rejestr]*t[liczba]<<endl;
+            break;
+        case '%':
+            cin>>rejestr>>liczba;
+            cout<<t[rejestr]%t[liczba]<<endl;
+            break;
+
+        }
+    }
+    return 0;
+}
