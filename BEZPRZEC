@@ -1,0 +1,7 @@
+//  2015-03-05 21:02:05
+
+#include <iostream>
+main(int a=1)
+{
+    if(int b=1&&std::cin>>a>>b&&std::cout<<a+b) {}
+}
