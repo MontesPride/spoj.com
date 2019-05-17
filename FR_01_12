@@ -1,0 +1,60 @@
+//  2015-02-10 21:14:33
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+main()
+{
+    vector<int> t;
+    int x;
+    int a, b;
+    cin>>x;
+    int q;
+    int qperm;
+    for(int i=0;i<x;i++)
+    {
+        qperm=0;
+        q=0;
+        cin>>a;
+        for(int i=0;i<a;i++)
+        {
+            cin>>b;
+            t.push_back(b);
+        }
+        if(a<3)
+        {
+            cout<<0<<endl;
+            t.resize(0);
+            continue;
+        }
+        else
+        {
+          if((t[1]>t[0]&&t[1]>t[2]) || (t[1]<t[0]&&t[1]<t[2]))
+            q=3;
+          for(int j=2;j<t.size()-1;j++)
+          {
+              if((t[j]>t[j-1]&&t[j]>t[j+1]) || (t[j]<t[j-1]&&t[j]<t[j+1]))
+              {
+                  if(q==0)
+                    q=3;
+                  else
+                    q++;
+              }
+              else
+              {
+                  if(q>qperm)
+                  qperm=q;
+                  q=0;
+              }
+          }
+        }
+        if(qperm==0 || qperm<q)
+            cout<<q<<endl;
+        else
+            cout<<qperm<<endl;
+            t.resize(0);
+    }
+    return 0;
+}
