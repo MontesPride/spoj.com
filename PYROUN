@@ -1,0 +1,11 @@
+#  2015-02-14 21:08:21
+
+for i in range(0,100):
+    a ,b = input().split(" ")
+    a = float(a)
+    a *= 1000
+    b = int(b)
+    if ((a + b - (a%b)) + (a - a%b))/2>a:
+        print(int(a - (a%b)))
+    if ((a + b - (a%b)) + (a - a%b))/2<=a:
+        print(int(a + b - a%b))
