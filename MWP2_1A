@@ -1,0 +1,79 @@
+//  2018-08-05 12:34:05
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	int liczbaZestawow;
+	int dlugoscZestawu;
+	int zestaw[200];
+	char wejscie[300];
+	register int * pZestawu;
+	register char *pWejscia;
+
+	int nrDebesciaka, iloscBledowDebesciaka, nrWarjacjiZestawu,liczbaBledowTemp;
+
+	char wyjscie[300];
+	register char *pWyjscie;
+
+	scanf(" %d ", &liczbaZestawow);
+
+	for (int i = 0; i < liczbaZestawow; i++)
+	{
+		scanf(" %d ", &dlugoscZestawu);
+		fgets(wejscie, sizeof wejscie, stdin);
+
+		pWejscia = wejscie;
+		pZestawu = zestaw;
+
+		for (int j = 0; j < dlugoscZestawu; j++, pZestawu++, pWejscia++)
+		{
+			*pZestawu = 0;
+			while (*pWejscia > 32)
+			{
+				(*pZestawu) = (*pZestawu) * 10 + (*pWejscia) - 48;
+				pWejscia++;
+			}
+		}
+
+		//przedluzenie tablicy intow 
+		memcpy(pZestawu, zestaw,sizeof(int)* dlugoscZestawu);
+		
+		nrDebesciaka = 0;
+		iloscBledowDebesciaka = dlugoscZestawu;
+	
+		for (nrWarjacjiZestawu = 0; nrWarjacjiZestawu < dlugoscZestawu; nrWarjacjiZestawu++)
+		{
+			liczbaBledowTemp = 0;
+			pZestawu = zestaw+ nrWarjacjiZestawu;
+
+			for (int i = 0; i < dlugoscZestawu; i++, pZestawu++)
+			{
+				if ((*pZestawu) != i + 1) liczbaBledowTemp++;
+				if (liczbaBledowTemp < iloscBledowDebesciaka)
+					continue;
+				else
+					break;
+			}
+
+			if (liczbaBledowTemp < iloscBledowDebesciaka)
+			{
+				nrDebesciaka = nrWarjacjiZestawu;
+				iloscBledowDebesciaka = liczbaBledowTemp;
+			}
+		}
+
+		pZestawu = zestaw + nrDebesciaka;
+		pWyjscie = wyjscie;
+		for (int j = 0; j < dlugoscZestawu; j++)
+		{
+			pWyjscie += sprintf(pWyjscie,"%d ", pZestawu[j]);
+		}
+		*pWyjscie = '\n';
+		pWyjscie++;
+		*pWyjscie = '\0';
+		fputs(wyjscie, stdout);
+	}
+	return 0;
+}
