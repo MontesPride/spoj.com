@@ -1,0 +1,77 @@
+//  2015-01-26 23:57:53
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t;   //ilosc powtorzen
+    int q,z;
+    int *wsk;
+    int **wsk2;
+    int a;
+    int p;
+    int x1=0,x2=0;
+    cin>>t;
+    for(int i=0; i<t; i++)
+    {
+        cin>>z>>q;
+        wsk = new int [q];
+        wsk2 = new int *[q];
+        for(int j=0; j<q; j++)
+        {
+            wsk2[j] = new int [z];
+        }
+
+        for(int j=0; j<z; j++)
+        {
+            for(int k=0; k<q; k++)
+            {
+                cin>>a;
+                wsk2[k][j]=a;
+            }
+        }
+        if(q==1)
+        {
+            for(int b=1;b<z;b++)
+                cout<<wsk2[0][b]<<endl;
+            cout<<wsk2[0][0]<<endl;
+            continue;
+        }
+        else
+        {
+        p=wsk2[x1][x2];
+        while(x2<z-1)
+        {
+            swap(wsk2[x1][x2+1],p);
+            x2++;
+        }
+        }
+        while(x1<q-1)
+        {
+            swap(wsk2[x1+1][x2],p);
+            x1++;
+        }
+        while(x2>0)
+        {
+            swap(wsk2[x1][x2-1],p);
+            x2--;
+        }
+        while(x1>0)
+        {
+            swap(wsk2[x1-1][x2],p);
+            x1--;
+        }
+
+    for(int j=0; j<z; j++)
+    {
+        for(int k=0; k<q; k++)
+        {
+            cout<<wsk2[k][j]<<" ";
+        }
+        cout<<endl;
+    }
+    }
+    return 0;
+}
