@@ -1,0 +1,77 @@
+//  2015-02-09 14:05:53
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int x=0,y=0;
+    int a,b;
+    int testy,pary;
+    cin>>testy;
+    for(int i=0; i<testy; i++)
+    {
+        cin>>pary;
+        for(int j=0; j<pary; j++)
+        {
+            cin>>a>>b;
+            switch (a)
+            {
+            case 0:
+            {
+                y+=b;
+                break;
+            }
+            case 1:
+            {
+                y-=b;
+                break;
+            }
+            case 2:
+            {
+                x+=b;
+                break;
+            }
+            case 3:
+            {
+                x-=b;
+                break;
+            }
+            }
+        }
+            if(x==0 && y==0)
+            {
+                cout<<"studnia"<<endl;
+                x=0;
+                y=0;
+            }
+            else
+            {
+
+                if(y>0)
+                {
+                    cout<<"0 "<<y<<endl;
+                    y=0;
+                }
+                if(y<0)
+                {
+                    cout<<"1 "<<abs(y)<<endl;
+                    y=0;
+                }
+                if(x>0)
+                {
+                    cout<<"2 "<<x<<endl;
+                    x=0;
+                }
+                if(x<0)
+                {
+                    cout<<"3 "<<abs(x)<<endl;
+                    x=0;
+                }
+            }
+        }
+
+    return 0;
+}
