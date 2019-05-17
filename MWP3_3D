@@ -1,0 +1,27 @@
+//  2015-01-25 21:54:23
+
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+    int x;
+    int a, b;
+    scanf("%i",&x);
+    for(int i=0;i<x;i++)
+    {
+        scanf("%i %i",&a,&b);
+        if(b%2==0)
+            {
+                printf("%.3lf %i\n",a*M_PI/b,b/2);
+            }
+            else
+            {
+                printf("%.3lf %i\n",a*M_PI/(2*b),b);
+            }
+    }
+    return 0;
+}
