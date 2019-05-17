@@ -1,0 +1,31 @@
+//  2015-02-08 22:16:03
+
+#include <iostream>
+
+using namespace std;
+
+unsigned long long int NWD(unsigned long long int a, unsigned long long int b)
+{
+    if(b!=0)
+      return NWD(b,a%b);
+
+    return a;
+}
+
+int main()
+{
+    unsigned long long int a,x,m,n;
+    cin>>a;
+    for(int i=0; i<a; i++)
+    {
+        cin>>x;
+        cin>>n;
+        for(int j=0;j<x-1;j++)
+        {
+            cin>>m;
+            n=n/NWD(n,m)*m;
+        }
+        cout<<n<<endl;
+    }
+    return 0;
+}
