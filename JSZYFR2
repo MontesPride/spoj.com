@@ -1,0 +1,61 @@
+//	2015-03-01 20:36:13
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int pierwsze[5]= {127,131,137,139,149};
+    bool sprawdzanie[5];
+
+    int x;
+    int n;
+    int *t;
+    int counter;
+    cin>>x;
+    for(int i=0; i<x; i++)
+    {
+        for(int i=0; i<5; i++)
+            sprawdzanie[i]=true;
+        counter=0;
+        cin>>n;
+        t = new int[n];
+        for(int j=0; j<n; j++)
+        {
+            cin>>t[j];
+        }
+        for(int j=0; j<5; j++)
+        {
+            for(int k=0; k<n; k++)
+            {
+                if(t[k]%pierwsze[j]<65 || t[k]%pierwsze[j]>90)
+                {
+                    sprawdzanie[j]=false;
+                    counter++;
+                    break;
+                }
+            }
+        }
+        if(counter!=4)
+        {
+            cout<<"NIECZYTELNE"<<endl;
+        }
+        else
+        {
+            for(int a=0; a<5; a++)
+            {
+                if(sprawdzanie[a]==true)
+                {
+                    cout<<pierwsze[a]<<" ";
+                    for(int z=0; z<n; z++)
+                    {
+                        cout<<(char)(t[z]%pierwsze[a]);
+                    }
+                    cout<<endl;
+                }
+            }
+        }
+    }
+    return 0;
+}
