@@ -1,0 +1,29 @@
+//  2015-02-05 21:02:35
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int m,n,a;
+    cin>>m>>n;
+    int t[m][n];
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cin>>a;
+            t[i][j]=a;
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            cout<<t[j][i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
