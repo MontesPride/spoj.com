@@ -1,0 +1,30 @@
+//  2015-01-24 12:32:17
+
+#include <iostream>
+
+using namespace std;
+//86 400
+int main()
+{
+    int x;
+    int n,c;
+    int czas,p=0,ile=0;
+    cin>>x;
+    for(int i=0; i<x; i++)
+    {
+        cin>>n>>c;
+        for(int j=0; j<n; j++)
+        {
+            cin>>czas;
+            ile=ile+(86400/czas);
+        }
+        if(ile%c==0)
+            p=ile/c;
+        else
+            p=ile/c+1;
+        cout<<p<<endl;
+        p=0;
+        ile=0;
+    }
+    return 0;
+}
