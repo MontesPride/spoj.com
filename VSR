@@ -1,0 +1,17 @@
+//  2015-01-22 21:02:55
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int v1,v2,n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cin>>v1>>v2;
+        cout<<2*v1*v2/(v1+v2)<<endl;
+    }
+    return 0;
+}
