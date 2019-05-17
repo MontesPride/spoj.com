@@ -1,0 +1,21 @@
+//  2015-12-12 19:20:28
+
+#include <cstdio>
+
+int main()
+{
+    long long int t, w = 0, s = 0, x;
+    scanf("%lli",&t);
+    while(t--)
+    {
+        scanf("%lli",&x);
+        if(w > 0)
+            w +=x;
+        else
+            w = x;
+        if(w > s)
+            s = w;
+    }
+    printf("%lli",s);
+    return 0;
+}
