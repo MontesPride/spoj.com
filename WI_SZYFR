@@ -1,0 +1,50 @@
+//  2015-02-09 13:27:26
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void szyfruj(int klucz, char &x, char szyfr)
+{
+    if(szyfr=='S')
+        x = (x - 65 + klucz)%26 + 65;
+    else
+        x = (x + 65 - klucz)%26 + 65;
+}
+
+int main()
+{
+    int z=0;
+    vector<int> tab;
+    int q=1000000000;
+    string szyfr;
+    int k;
+    string wyraz;
+    cin>>szyfr>>k>>wyraz;
+
+    if(k!=0)
+    {
+        for(;;)
+        {
+            if(((k/q)%10)!=0)
+                break;
+            else
+                q/=10;
+        }
+        while(q!=0)
+        {
+            tab.push_back((k/q)%10);
+            q/=10;
+        }
+        for(int i=0; i<wyraz.size(); i++)
+        {
+            szyfruj(tab[z%tab.size()],wyraz[i],szyfr[0]);
+            z++;
+        }
+        cout<<wyraz;
+    }
+    else
+        cout<<wyraz;
+    return 0;
+}
