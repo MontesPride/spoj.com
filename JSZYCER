@@ -1,0 +1,33 @@
+//  2015-01-25 00:07:15
+
+#include <iostream>
+#include <string>
+using namespace std;
+string szyfr( string txt, int klucz )
+{
+    int liczba = txt.length();
+    klucz = klucz % 26;
+    for( int i = 0; i < liczba; i++ )
+    {if((int)txt[i]==32)
+    continue;
+        if( klucz + txt[ i ] > 90 )
+             txt[ i ] =( txt[ i ] + klucz - 90 ) + 64;
+        else if( klucz + txt[ i ] < 65 )
+             txt[ i ] = 91 -( 65 -( klucz + txt[ i ] ) );
+        else
+             txt[ i ] = txt[ i ] + klucz;
+
+    }
+    return txt;
+}
+int main()
+{
+    string tekst;
+    int k=3;
+    while(getline(cin,tekst))
+    {
+    tekst = szyfr( tekst, k );
+    cout << tekst<<endl;
+    }
+    return 0;
+}
