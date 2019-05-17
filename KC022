@@ -1,0 +1,41 @@
+//  2018-08-05 12:35:02
+
+#include <iostream>
+#include <string>
+#include <list>
+
+int main() {
+	std::string linia;
+	int dlugoscLini;
+	int pozycjaStatystyczna;
+	std::list <long> lista;
+
+	while (std::getline(std::cin, linia))
+	{
+		if((dlugoscLini = linia.length())==0) continue;
+		pozycjaStatystyczna = atoi(&linia[0]);
+
+		for (int i = linia.find(" ", 0); i < dlugoscLini;)
+		{
+			while (linia[i + 1] == ' ' && i++)  continue;
+			lista.push_back(atoi(&linia[i]));
+			if ((i = linia.find(" ", i + 1)) == std::string::npos) break;
+		}
+		lista.sort();
+		lista.unique();
+		lista.reverse();
+
+		if (lista.size() >= pozycjaStatystyczna)
+		{
+			std::list<long>::iterator iter = std::next(lista.begin(), pozycjaStatystyczna - 1);
+			std::cout << *iter << std::endl;
+		}
+		else
+		{
+			std::cout << '-' << std::endl;
+		}
+		lista.clear();
+	}
+
+	return 0;
+}
