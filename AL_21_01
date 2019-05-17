@@ -1,0 +1,20 @@
+//  2015-03-09 21:56:46
+
+#include <cstdio>
+#include <cmath>
+
+int main()
+{
+    int t;
+    float r, c, w, h;
+    scanf("%i",&t);
+    for(int i=0;i<t;i++)
+    {
+        scanf("%i%i%i%i",&r,&c,&w,&h);
+        if(w<c && 2*r>h+w+(r-sqrt(r*r-c*c)))
+            printf("TAK\n");
+        else
+            printf("NIE\n");
+    }
+    return 0;
+}
