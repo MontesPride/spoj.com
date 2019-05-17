@@ -1,0 +1,34 @@
+//  2015-03-08 20:54:13
+
+#include <iostream>
+#include <stdio.h>
+#include <ctype.h>
+
+using namespace std;
+
+int main()
+{
+    string tablica[26]= {".-","-...","-.-.","-..",".",".-..","--.","....","..",".---","-.-","..-.","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+    string x;
+    char c;
+    int i;
+    while(getline(cin,x))
+    {
+        i=0;
+        while (x[i])
+        {
+            c=x[i];
+            x[i]=toupper(c);
+            i++;
+        }
+        for(int i=0; i<x.size(); i++)
+        {
+            if((int)x[i]!=32)
+                cout<<tablica[x[i]-65]<<"/";
+            else
+                cout<<"/";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
