@@ -1,0 +1,36 @@
+//  2018-08-03 22:21:37
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(0);
+
+    int n;
+    string s, s_temp;
+    bool k;
+    cin>>n;
+    while(n--){
+        cin >> s;
+        s_temp = s;
+        k = false;
+        for(int i=s_temp.size()-1;i>=0;i--){
+            if(s_temp[i] + 1 <= 122){
+                s_temp[i] = (char)(s_temp[i] + 1);
+                break;
+            }else{
+                s_temp[i] = 'a';
+                if(i == 0)
+                    k = true;
+            }
+        }
+        if(k)
+            cout << s << "a";
+        else
+            cout << s_temp;
+        cout << "\n";
+    }
+
+    return 0;
+}
