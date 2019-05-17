@@ -1,0 +1,42 @@
+//  2015-02-05 16:52:17
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    string x;
+    int t,a;
+    cin>>t>>x;
+    a=x.size()-1;
+    while(x.size()>t && a>=0)
+    {
+        if((int)x[a]==36 || (int)x[a]==95)
+            x.erase (x.begin()+a);
+        a--;
+    }
+    a=x.size()-1;
+    while(x.size()>t && a>=0)
+    {
+        if((int)x[a]>=48 && (int)x[a]<=57)
+            x.erase (x.begin()+a);
+        a--;
+    }
+    a=x.size()-1;
+    while(x.size()>t && a>0)
+    {
+        if((int)x[a]==65 || (int)x[a]==69 || (int)x[a]==73 || (int)x[a]==79 || (int)x[a]==97
+                || (int)x[a]==85 || (int)x[a]==89 || (int)x[a]==101 || (int)x[a]==105 || (int)x[a]==111
+                || (int)x[a]==117 || (int)x[a]==121)
+            x.erase (x.begin()+a);
+        a--;
+    }
+    while(x.size()>t)
+    {
+        x.erase(x.end());
+    }
+    cout<<x;
+    return 0;
+}
