@@ -1,0 +1,19 @@
+//  2018-08-24 14:22:53
+
+#include <cstdio>
+
+int main(){
+    int x, n, i, tab[61], a, b;
+    scanf("%i", &x);
+    while(x--){
+        scanf("%i%i%i", &n, &a, &b);
+        tab[1] = a%10;
+        tab[2] = b%10;
+        n = (n-1)%60+1;
+        for(i=3;i<=n;++i){
+            tab[i] = (tab[i-1]+tab[i-2])%10;
+        }
+        printf("%i\n", tab[n]);
+    }
+    return 0;
+}
