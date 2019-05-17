@@ -1,0 +1,9 @@
+//  2015-03-01 13:24:57
+
+import math
+n = int(input())
+for i in range (0,n):
+    k, q = input().split(" ")
+    k = int(k)
+    q = int(q)
+    print(math.factorial(k)//(math.factorial(q)*math.factorial(k-q)))
