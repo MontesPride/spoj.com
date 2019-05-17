@@ -1,0 +1,35 @@
+//  2015-02-10 21:17:47
+
+#include <cstdlib>
+#include <stdio.h>
+
+int main()
+{
+    long long int dl,t,l,i,j,wl;
+    char w[1000000];
+
+        scanf("%lld",&l);
+        i=0;
+        dl=0;
+        for(j=2;i<l;j*=2)
+        {
+            i+=j;
+            dl++;
+        }
+
+        l=l-(i-j/2)-1;
+        wl=0;
+        while(l>0)
+        {
+            w[wl++]='5'+(l%2);
+            l/=2;
+
+        }
+        while(wl<dl)
+            w[wl++]='5';
+        for(i=wl-1;i>=0;i--)
+            printf("%c",w[i]);
+        printf("\n");
+
+    return EXIT_SUCCESS;
+}
