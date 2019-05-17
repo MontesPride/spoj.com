@@ -1,0 +1,17 @@
+//  2015-02-08 16:51:07
+
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+long double r,d;
+double S;
+cin>>r>>d;
+d=d*d;
+r=r*r;
+S=(r-d/4.0)*3.141592654;
+printf("%.2lf", S);
+return 0;
+}
