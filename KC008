@@ -1,0 +1,23 @@
+//  2015-02-05 22:16:14
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long int a,suma=0,sumafull=0;
+    while(cin>>a)
+    {
+        if(a==0)
+        {
+            sumafull=sumafull+suma;
+            cout<<suma<<endl;
+            suma=0;
+            continue;
+        }
+        suma=suma+a;
+    }
+    cout<<sumafull;
+    return 0;
+}
