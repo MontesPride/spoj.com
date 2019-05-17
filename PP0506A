@@ -1,0 +1,59 @@
+//  2015-01-24 01:11:56
+
+#include<iostream>
+#include<math.h>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+struct punkt
+{
+    string n;
+    float x;
+    float y;
+};
+
+int main()
+{
+    float *wsk;
+    float *pos;
+    vector<punkt> t;
+    int n,q;
+    string z;
+    float g,h;
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        cin>>q;
+        wsk = new float[q];
+        pos = new float[q];
+        t.resize(q);
+        for(int j=0; j<q; j++)
+        {
+            cin>>z>>g>>h;
+            t[j].n=z;
+            t[j].x=g;
+            t[j].y=h;
+            wsk[j]=sqrt(g*g+h*h);
+            pos[j]=sqrt(g*g+h*h);
+        }
+
+        sort(pos,pos+q);
+        for(int s=0; s<q; s++)
+        {
+            for(int w=0; w<q; w++)
+            {
+                if(pos[s]==wsk[w])
+                {
+                    cout<<t[w].n<<" "<<t[w].x<<" "<<t[w].y<<endl;
+                    wsk[w]=-1;
+                    break;
+                }
+            }
+        }
+        t.resize(0);
+        cout<<endl;
+    }
+
+    return 0;
+}
