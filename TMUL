@@ -1,0 +1,8 @@
+#  2015-02-09 18:15:12
+
+n = int(input())
+for i in range (0,n):
+    q, k = input().split(" ")
+    q = int(q)
+    k = int(k)
+    print(q*k)
