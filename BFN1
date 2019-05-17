@@ -1,0 +1,75 @@
+//  2015-01-26 17:55:43
+
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+string IntToStr(unsigned long int l)
+{
+    ostringstream os;
+    os<<l;
+    return os.str();
+}
+
+int czy_palindrom(string war)
+{
+    int l = war.length();
+    for(int i=0; i<(l/2); i++)
+    {
+        if(war[i]!=war[l-i-1])
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+string odwroc(string war)
+{
+    int l = war.length();
+    for(int i=0; i<(l/2); i++)
+    {
+        char tmp = war[i];
+        war[i] = war[l-i-1];
+        war[l-i-1]=tmp;
+    }
+    return war;
+}
+int main()
+{
+    int x;
+    cin>>x;
+    int q=0;
+    string liczba2;
+    string liczba;
+
+    for(int i=0; i<x; i++)
+    {
+        q=0;
+        cin>>liczba;
+        if(czy_palindrom(liczba))
+        {
+            cout<<liczba<<" "<<q<<endl;
+        }
+        else
+        {
+            while(!czy_palindrom(liczba))
+            {
+                q++;
+
+                liczba2 = odwroc(liczba);
+                unsigned long int l1 = strtol(liczba.c_str(),NULL,10);
+                unsigned long int l2 = strtol(liczba2.c_str(),NULL,10);
+
+                l1 = l1+l2;
+
+                liczba = IntToStr(l1);
+            }
+            cout<<liczba<<" "<<q<<endl;
+        }
+    }
+    return 0;
+}
