@@ -1,0 +1,45 @@
+//  2015-02-07 20:18:49
+
+#include<iostream>
+#include<vector>
+#include<cmath>
+using namespace std;
+
+vector<unsigned long long int> t;
+
+void binarny(unsigned long long int n)
+{
+    if (n>0)
+    {
+        binarny(n/2);
+        t.push_back(n%2);
+    }
+}
+
+int main ()
+{
+    unsigned long long b=1;
+    unsigned long long int a;
+    unsigned long long int suma,q;
+    while(cin>>a)
+    {
+        suma=0;
+        binarny(a);
+        q=t.size()-1;
+        for(int i=t.size()-1; i>=0; i--)
+        {
+
+              for(int i=0;i<q;i++)
+              {
+                  b*=2;
+              }
+             suma+=b*t[i];
+            q--;
+            b=1;
+        }
+        cout<<suma<<endl;
+        t.resize(0);
+
+    }
+    return 0;
+}
