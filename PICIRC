@@ -1,0 +1,19 @@
+//  2015-02-09 19:15:07
+
+import math
+
+x, y, r = input().split(" ")
+x = int(x)
+y = int(y)
+r = int(r)
+q = int(input())
+for i in range(0,q):
+    a, b = input().split(" ")
+    a = int(a)
+    b = int(b)
+    if math.sqrt(((x-a)**2)+((y-b)**2))<r:
+        print("I")
+    if math.sqrt(((x-a)**2)+((y-b)**2))==r:
+        print("E")
+    if math.sqrt(((x-a)**2)+((y-b)**2))>r:
+        print("O")
