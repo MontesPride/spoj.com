@@ -1,0 +1,50 @@
+//  2015-02-10 23:02:05
+
+#include <cstdlib>
+#include <stdio.h>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int q=0;
+    double p,szer=30;
+    int t[21];
+    for(int i=0; i<21; i++)
+    {
+        t[i]=0;
+    }
+    int x;
+
+    while(scanf("%i",&x)!=EOF)
+    {
+        t[x+10]++;
+    }
+
+    for(int i=0; i<21; i++)
+    {
+        if(t[i]>q)
+            q=t[i];
+    }
+
+    for(int i=0; i<21; i++)
+    {
+        p=round(szer*t[i]/q);
+        if(i-10<0 && i-10>-10 || i-10==10)
+            cout<<" ";
+        if(i-10>=0 && i-10<10)
+            cout<<"  ";
+        cout<<i-10<<":|";
+        for(int j=0; j<szer; j++)
+        {
+            if(j<p)
+                cout<<"*";
+            else
+                cout<<" ";
+        }
+        cout<<"|\n";
+    }
+    return 0;
+}
