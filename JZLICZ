@@ -1,0 +1,41 @@
+//  2015-01-24 13:10:12
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int duze[26];
+    int male[26];
+    string x;
+    int n;
+    for(int i=0;i<26;i++)
+    {
+        duze[i]=0;
+        male[i]=0;
+    }
+        cin>>n;
+    for(int i=0; i<=n; i++)
+    {
+        getline(cin,x);
+        for(int j=0;j<x.size();j++)
+        {
+            if((int)x[j]>=65 && (int)x[j]<=90)
+                duze[(int)x[j]-65]++;
+            if((int)x[j]>=97 && (int)x[j]<=122)
+                male[(int)x[j]-97]++;
+        }
+    }
+    for(int j=0;j<26;j++)
+        {
+            if(male[j]>0)
+                cout<<(char)(j+97)<<" "<<male[j]<<endl;
+        }
+        for(int j=0;j<26;j++)
+        {
+            if(duze[j]>0)
+                cout<<(char)(j+65)<<" "<<duze[j]<<endl;
+        }
+    return 0;
+}
