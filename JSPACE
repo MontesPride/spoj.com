@@ -1,0 +1,46 @@
+//  2015-01-24 23:18:30
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    vector<int> t;
+    string d;
+    string x;
+
+    while(getline(cin,x))
+    {
+
+
+    for(int i=0; i<x.size(); i++)
+    {
+            if(x[i+1]==' ' && x[i]==' ')
+                continue;
+        if(x[i]==' ')
+            t.push_back(i);
+    }
+    for(int i=0; i<t.size(); i++)
+    {
+        if((int)x[t[i]+1]>=97 && (int)x[t[i]+1]<=122)
+        x[t[i]+1]=x[t[i]+1]-32;
+    }
+    for(int i=0; i<x.size(); i++)
+    {
+        if(x[i]!=' ')
+            d=d+x[i];
+    }
+    
+    for(int i=0; i<d.size(); i++)
+        cout<<d[i];
+        cout<<endl;
+    t.resize(0);
+    d="";
+
+    }
+    return 0;
+}
