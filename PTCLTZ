@@ -1,0 +1,25 @@
+//  2015-03-07 17:49:32
+
+#include <cstdio>
+
+int main()
+{
+  int t;
+  scanf("%d",&t);
+  while (t--)
+    {
+      int s;
+      scanf("%d",&s);
+      int ret = 0;
+      while (s!=1)
+        {
+          if (s%2)
+            s=3*s+1;
+          else
+            s/=2;
+          ret++;
+        }
+      printf("%d\n",ret);
+    }
+  return 0;
+}
