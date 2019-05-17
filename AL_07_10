@@ -1,0 +1,38 @@
+//  2018-08-24 15:29:59
+
+#include <cstdio>
+#include <math.h>
+#include <iostream>
+
+int main()
+{
+    //std::ios_base::sync_with_stdio(0);
+    int n, m, i, maxx, a, b, c, s, tab[500005];
+    while(std::cin>>n)
+    {
+        //std::cin>>n;
+        scanf("%i", &m);
+        for(maxx = i = 0; i<n; ++i)
+        {
+            scanf("%i", &tab[i]);
+            if(tab[i]>maxx)
+                maxx = tab[i];
+        }
+        a = 1;
+        b = maxx;
+        while(a<b)
+        {
+            s = 0;
+            c = (a+b)/2;
+            for(i = 0; i<n; ++i)
+                s += ceil((double)tab[i]/(double)c);
+            if(s>m)
+                a = c + 1;
+            else
+                b = c;
+        }
+        printf("%i\n", a);
+    }
+
+    return 0;
+}
