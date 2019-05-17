@@ -1,0 +1,17 @@
+#  2018-08-02 10:13:08
+
+from math import sqrt
+
+n = list(map(int, input().split()))
+
+a = sqrt((n[0]-n[2])**2+(n[1]-n[3])**2)
+b = sqrt((n[2]-n[4])**2+(n[3]-n[5])**2)
+c = sqrt((n[0]-n[4])**2+(n[1]-n[5])**2)
+
+p = (a+b+c)/2
+
+area = sqrt(p*(p-a)*(p-b)*(p-c))
+
+r = (a*b*c)/(4*area)
+
+print("%.2f" % r)
