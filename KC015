@@ -1,0 +1,42 @@
+//  2015-01-24 23:51:25
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main()
+{
+    int m[1001], n[1001], x, y; char z[2]; bool c;
+
+    c=true;
+    while(c)
+    {
+        x=1; y=0;
+if ((m[0] = cin.get()) == EOF) break;
+        do {m[x]=cin.get(); x++;} while (m[x-1]!=' '); x--;
+        cin.get(z[0]);            cin.ignore(2);
+        do {n[y]=cin.get(); y++;} while (n[y-1]!='\n'&&n[y-1]!=EOF);
+        if (n[y-1]==EOF) c=false; y--;
+
+        z[1] = '=';
+        if(x==y)
+        {
+            for(y=0;y<x;y++)
+            {
+                if(m[y]<n[y]) {z[1] = '<'; break;}
+                if(m[y]>n[y]) {z[1] = '>'; break;}
+            }
+        }
+        else { if(x>y) z[1] = '>'; else z[1] = '<'; }
+
+        if((z[0]=='='&&z[1]=='=')              ||
+           (z[0]=='!'&&z[1]!='=')              ||
+           (z[0]=='>'&&(z[1]=='>'||z[1]=='=')) ||
+           (z[0]=='<'&&(z[1]=='<'||z[1]=='='))  )
+                cout << "1";
+        else cout << "0";
+
+        cout << "\n";
+    }
+    return 0;
+}
