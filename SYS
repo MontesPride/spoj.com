@@ -1,0 +1,36 @@
+//  2015-02-11 13:39:07
+
+#include<iostream>
+using namespace std;
+
+void konwersja(int liczba, int system)
+{
+    if (liczba == 0)
+        return;
+    int wynik = liczba%system;
+    liczba /= system;
+    konwersja(liczba, system);
+    if (wynik < 10)
+        cout << wynik;
+    else
+    {
+        char litera = wynik + 55;
+        cout << litera;
+    }
+}
+
+int main()
+{
+    int liczba, system;
+    int x;
+    cin>>x;
+    for(int i=0; i<x; i++)
+    {
+        cin>>liczba;
+        konwersja(liczba, 16);
+        cout<<" ";
+        konwersja(liczba, 11);  // wywolanie funkcji konwertujacej
+        cout << endl;
+    }
+    return 0;
+}
