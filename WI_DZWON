@@ -1,0 +1,59 @@
+//  2015-02-09 14:54:48
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string x;
+    cin>>x;
+    int a;
+    int godzina=(int)((x[0]-48)*10+(x[1]-48)), minuta=(int)((x[3]-48)*10+(x[4]-48));
+    if(godzina<10)
+        cout<<"0"<<godzina<<":";
+    else
+        cout<<godzina<<":";
+    if(minuta<10)
+        cout<<"0"<<minuta;
+    else
+        cout<<minuta;
+
+    while(cin>>a)
+    {
+        cout<<",";
+        godzina=(godzina+(minuta+45)/60)%24;
+        minuta=(minuta+45)%60;
+        if(godzina<10)
+            cout<<"0"<<godzina<<":";
+        else
+            cout<<godzina<<":";
+        if(minuta<10)
+            cout<<"0"<<minuta<<",";
+        else
+            cout<<minuta<<",";
+
+        godzina=(godzina+(minuta+a)/60)%24;
+        minuta=(minuta+a)%60;
+        if(godzina<10)
+            cout<<"0"<<godzina<<":";
+        else
+            cout<<godzina<<":";
+        if(minuta<10)
+            cout<<"0"<<minuta;
+        else
+            cout<<minuta;
+    }
+    cout<<",";
+        godzina=(godzina+(minuta+45)/60)%24;
+        minuta=(minuta+45)%60;
+        if(godzina<10)
+            cout<<"0"<<godzina<<":";
+        else
+            cout<<godzina<<":";
+        if(minuta<10)
+            cout<<"0"<<minuta;
+        else
+            cout<<minuta;
+    return 0;
+}
