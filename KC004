@@ -1,0 +1,24 @@
+//  2015-02-05 22:07:02
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float a,b,q=0,c;
+    
+    while(cin>>a)
+    {
+        cin>>b;
+        for(int i=0;i<b;i++)
+        {
+            cin>>c;
+            if(a==c)
+                q++;
+        }
+        cout<<q<<endl;
+        q=0;
+    }
+    return 0;
+}
