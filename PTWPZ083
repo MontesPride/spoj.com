@@ -1,0 +1,34 @@
+//  2015-03-05 19:38:59
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x, suma;
+    string y;
+    cin>>x;
+    for(int i=0;i<x;i++)
+    {
+        suma=0;
+        cin>>y;
+        suma=y[0]-48;
+        for(int j=1;j<y.size();j++)
+        {
+            if(y[j]=='-')
+            {
+                suma-=(y[j+1]-48);
+                j++;
+            }
+            else
+            {
+                suma+=(y[j+1]-48);
+                j++;
+            }
+        }
+        cout<<suma<<endl;
+        suma=0;
+    }
+    return 0;
+}
