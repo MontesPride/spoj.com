@@ -1,0 +1,28 @@
+//  2015-02-07 16:31:44
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+    int a;
+    string x,y;
+    int q;
+    scanf("%i",&q);
+    for(int i=0;i<q;i++)
+    {
+        cin>>x>>y;
+        if(x.size()>y.size())
+            a=y.size();
+        else
+            a=x.size();
+        for(int j=0;j<a;j++)
+        {
+            cout<<x[j]<<y[j];
+        }
+        cout<<endl;
+    }
+    return 0;
+}
