@@ -1,0 +1,28 @@
+//  2018-08-24 13:41:59
+
+#include <cstdio>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+
+    int n, a, b, c, x, y, z;
+    int d, e, f;
+
+    scanf("%i%i%i%i", &n, &x, &y, &z);
+    while(--n){
+        scanf("%i%i%i", &a, &b, &c);
+        d = a + min(y, z);
+        e = b + min(x, z);
+        f = c + min(x, y);
+        x = d;
+        y = e;
+        z = f;
+    }
+
+    int result = min(x, y);
+    printf("%i", min(result, z));
+
+    return 0;
+}
