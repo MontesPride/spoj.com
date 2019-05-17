@@ -1,0 +1,55 @@
+//  2015-02-09 16:05:23
+
+#include<iostream>
+
+using namespace std;
+
+void szyfr(char znak1, char znak2)
+{
+    switch (znak2)
+    {
+    case 'E':
+        {
+            cout<<(char)(znak1-1);
+            break;
+        }
+    case 'C':
+        {
+            cout<<(char)(znak1-33);
+            break;
+        }
+    case 'D':
+        {
+            cout<<(char)(znak1-17);
+            break;
+        }
+    case 'F':
+        {
+            cout<<(char)(znak1+15);
+            break;
+        }
+    case 'G':
+        {
+            cout<<(char)(znak1+31);
+            break;
+        }
+        case 'H':
+        {
+            cout<<(char)(znak1+47);
+            break;
+        }
+    }
+}
+int main()
+{
+    string x;
+    while(cin>>x)
+    {
+        for(int i=0;i<x.size();i+=2)
+        {
+            szyfr(x[i],x[i+1]);
+        }
+        cout<<endl;
+    }
+    return 0;
+}
