@@ -1,0 +1,31 @@
+//  2018-08-02 09:58:55
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(0);
+    int n, pointer;
+    string ciag, podciag;
+    cin >> n;
+    while(n--){
+        cin >> ciag >> podciag;
+        pointer = 0;
+        for(int i=0;i<ciag.size();i++){
+            if(ciag[i] == podciag[pointer]){
+                pointer++;
+            }
+            if(pointer >= podciag.size()){
+                break;
+            }
+        }
+        if(pointer >= podciag.size()){
+            cout << "Tak\n";
+        }else{
+            cout << "Nie\n";
+        }
+    }
+
+    return 0;
+}
