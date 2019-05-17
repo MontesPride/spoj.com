@@ -1,0 +1,17 @@
+#  2015-03-01 16:53:48
+
+def modular_pow(base, exponent, modulus):
+    result = 1
+    while exponent > 0:
+        if exponent % 2 == 1:
+            result = (result * base) % modulus
+        exponent = exponent // 2
+        base = (base * base) % modulus
+    return result
+n = int(input())
+for i in range (0,n):
+    a, b, c = input().split(" ")
+    a = int(a)
+    b = int(b)
+    c = int(c)
+    print(modular_pow(a,b,c))
