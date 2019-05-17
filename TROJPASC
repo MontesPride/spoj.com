@@ -1,0 +1,18 @@
+#  2018-07-28 00:32:51
+
+from math import factorial
+
+x = int(input())
+
+for j in range(0, x):
+    n = int(input())
+    l = []
+    for i in range(0, n//2+n%2):
+        t = factorial(n)
+        temp = t//factorial(i)//factorial(n-i)
+        l.append(temp)
+        print(temp)
+    if n%2 == 0:
+        print(t//factorial(n//2)//factorial(n-n//2))
+    l.reverse()
+    print(*l, sep='\n')
