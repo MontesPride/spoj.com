@@ -1,0 +1,35 @@
+//  2015-03-08 20:17:43
+
+#include <cstdio>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    unsigned long long int q,suma,z;
+    unsigned long long int x;
+    while(cin>>x)
+    {
+        z=1;
+        q=1;
+        suma=0;
+        while(x!=0)
+        {
+            if((9*q*z)<=x)
+            {
+                suma+=9*q;
+                x=x-(9*q*z);
+                q*=10;
+                z++;
+            }
+            if((9*q*z)>x)
+            {
+                suma+=x/z;
+                x=0;
+            }
+        }
+        cout<<suma<<endl;
+    }
+    return 0;
+}
