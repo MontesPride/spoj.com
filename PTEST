@@ -1,0 +1,13 @@
+//  2015-01-22 20:59:00
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    cout<<a+b;
+    return 0;
+}
