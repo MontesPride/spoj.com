@@ -1,0 +1,30 @@
+//  2015-02-06 21:35:49
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+       int q=0;
+       string darek;
+       string jacek;
+       string marek;
+       cin>>darek;
+       cin>>jacek;
+       cin>>marek;
+       for(int i=0;i<marek.size();i++)
+       {
+           if(marek[i]==darek[i] && jacek[i]==darek[i])
+            continue;
+            if(marek[i]!=darek[i] && jacek[i]!=darek[i] && jacek[i]==marek[i])
+           {
+            q++;
+            q++;
+            continue;
+           }
+           else q++;
+       }
+        cout<<q;
+        return 0;
+}
