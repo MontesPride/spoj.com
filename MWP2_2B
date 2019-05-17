@@ -1,0 +1,31 @@
+//  2015-02-11 14:27:53
+
+#include <iostream>
+
+using namespace std;
+
+long long int modular_pow(long long int base, long long int exponent, int modulus)
+{
+    long long int result = 1;
+    while (exponent > 0)
+    {
+        if (exponent % 2 == 1)
+            result = (result * base) % modulus;
+        exponent = exponent >> 1;
+        base = (base * base) % modulus;
+    }
+    return result;
+}
+
+int main()
+{
+    long long int x, y;
+    int mod;
+    while(cin>>x>>y>>mod)
+    {
+        if(x==0 && y==0 && mod==0)
+            break;
+        cout<<modular_pow(x, y , mod)<<endl;
+    }
+    return 0;
+}
