@@ -1,0 +1,47 @@
+//  2015-02-07 17:05:31
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+    int a;
+    char znak;
+    int q=0;
+    int t[10];
+    for(int i=0; i<10; i++)
+    {
+        t[i]=0;
+    }
+    while(cin>>znak)
+    {
+        if(znak=='+')
+        {
+            if(q<=9)
+            {
+                if(q<0)
+                    q=0;
+                cin>>a;
+                t[q]=a;
+                cout<<":)"<<endl;
+                q++;
+            }
+            else
+                cout<<":("<<endl;
+        }
+        if(znak=='-')
+        {
+            q--;
+            if(q>=0)
+            {
+                cout<<t[q]<<endl;
+                t[q]=0;
+            }
+            else
+                cout<<":("<<endl;
+        }
+    }
+    return 0;
+}
