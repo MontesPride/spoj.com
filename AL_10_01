@@ -1,0 +1,41 @@
+//  2015-01-24 15:43:46
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    char *wsk;
+    int x;
+    int t,l=0;
+    cin>>x;
+    for(int i=0; i<x; i++)
+    {
+        cin>>t;
+        wsk = new char[t];
+        cin>>wsk;
+        for(int i=0; i<t; i++)
+        {
+            if(wsk[i]=='?')
+                l++;
+        }
+        if(t==1 && wsk[0]=='?')
+            cout<<"10"<<endl;
+        else if(wsk[0]=='?')
+        {
+            cout<<"9";
+            for(int i=0;i<l-1;i++)
+                cout<<"0";
+        }
+        else
+        {
+            cout<<"1";
+            for(int i=0;i<l;i++)
+                cout<<"0";
+        }
+        l=0;
+        cout<<endl;
+    }
+    return 0;
+}
