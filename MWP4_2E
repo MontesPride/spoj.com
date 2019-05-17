@@ -1,0 +1,35 @@
+//  2015-02-11 18:29:05
+
+#include <cstdio>
+
+int main()
+{
+    int Z,osoby,j,k,osoba1,osoba2;
+
+    scanf ("%d", &Z);
+
+
+    while (Z--)
+    {
+
+        scanf("%d%d%d", &osoby,&j,&k);
+        bool *tablica=new bool [osoby];
+        for (int i=0; i<osoby; i++)
+            tablica[i]=0;
+        tablica[k-1]=1;
+        printf("%d\n",k);
+
+        while (j--)
+        {
+            scanf("%d%d", &osoba1,&osoba2);
+            if (tablica[osoba1-1]==1 && tablica[osoba2-1]==0)
+            {
+                printf("%d\n", osoba2);
+                tablica[osoba2-1]=1;
+            }
+        }
+
+        delete[] tablica;
+    }
+    return(0);
+}
