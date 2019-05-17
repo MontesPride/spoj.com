@@ -1,0 +1,18 @@
+//  2015-02-05 15:35:16
+
+#include <stdio.h>
+
+int main()
+{
+    float a,b,c;
+    scanf("%f%f%f",&a,&b,&c);
+    if(a==0 && b==c)
+        printf("NWR");
+    else if(a==0 && b!=c)
+        printf("BR");
+    else
+    {
+        printf("%.2f",(c-b)/a);
+    }
+    return 0;
+}
