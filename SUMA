@@ -1,0 +1,19 @@
+//  2015-01-22 22:51:06
+
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+
+int main()
+{
+    int a,suma=0;
+
+
+        while(cin>>a)
+        {
+        cout<<suma+a<<endl;
+        suma=suma+a;
+        }
+    return 0;
+}
