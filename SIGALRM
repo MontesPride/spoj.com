@@ -1,0 +1,5 @@
+//  2015-02-06 22:12:04
+
+#include <unistd.h>
+
+int main(){ alarm(1); for(;;); }
