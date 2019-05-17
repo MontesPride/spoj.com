@@ -1,0 +1,70 @@
+//  2015-02-13 14:17:54
+
+#include <iostream>
+
+using namespace std;
+
+string trans (char, char, char);
+
+string transTable[10][4]={"dziesiec ","","","",
+                              "jedenascie ","jeden ","tab dzies!!!","sto ",
+                              "dwanascie ","dwa ","dwadziescia ","dwiescie ",
+                              "trzynascie ","trzy ","trzydziesci ","trzysta ",
+                              "czternascie ","cztery ","czterdziesci ","czterysta ",
+                              "pietnascie ","piec ","piecdziesiat ","piecset ",
+                              "szesnascie ","szesc ","szescdziesiat ","szescset ",
+                              "siedemnascie ","siedem ","siedemdziesiat ","siedemset ",
+                              "osiemnascie ","osiem ","osiemdziesiat ","osiemset ",
+                              "dziewietnascie ","dziewiec ","dziewiecdziesiat ","dziewiecset "};
+
+string prefix[5]={"","tys. ","mln. ","mld. ","bln. "};
+
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        string number;
+        cin >> number;
+
+        int p=number.size()/3;
+        if(number.size()%3)
+            p++;
+
+        int t=(3-number.size()%3);
+        while(t&&t--<3)
+            number.insert(0,"0");
+
+        int j=p*3;
+        p--;
+
+        for(int i=0; i<j;i+=3)
+        {
+            string tmp = trans(number[i],number[i+1],number[i+2]);
+
+            if(tmp!="")
+                cout << tmp << prefix[p--];
+            else
+                p--;
+        }
+        cout << endl;
+    }
+}
+
+string trans (char set, char dzie, char jed)
+
+{
+    string str;
+
+    str=transTable[set-48][3];
+
+    if((dzie-48)==1)
+            str+=transTable[jed-48][0];
+    else
+    {
+        str+=transTable[dzie-48][2];
+        str+=transTable[jed-48][1];
+    }
+    return str;
+}
