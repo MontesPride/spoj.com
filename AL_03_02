@@ -1,0 +1,37 @@
+//  2015-02-15 18:10:12
+
+#include <cstdio>
+
+int main()
+{
+    int n, k, i, x, y, max, start, end, *tab, q;
+    char z;
+    scanf("%i",&q);
+    for(int j=0;j<q;j++)
+    {
+    scanf("%i%i",&n,&k);
+    tab = new int[n];
+    max = x = y = start = end = 0;
+    for(i=0; i<n; i++)
+    {
+        scanf(" %c",&z);
+        if(z=='0')
+            x++;
+        else if(y<k)
+            x++,
+            y++,
+            tab[end++] = i;
+            else
+            {
+                if(x>max)
+                    max = x;
+                x = i-tab[start++];
+                tab[end++] = i;
+            }
+    }
+    if(x>max)
+        max = x;
+    printf("%i\n",max);
+    }
+    return 0;
+}
