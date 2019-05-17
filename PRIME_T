@@ -1,3 +1,5 @@
+//  2015-01-22 21:36:40
+
 #include <cstdio>
 
 bool czy_pierwsza(int n)
